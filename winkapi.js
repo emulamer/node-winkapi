@@ -128,7 +128,7 @@ WinkAPI.prototype.getDevices = function(callback) {
         devices.push({ id      : datum[k]
                      , type    : k.slice(0, -3)
                      , name    : datum.name
-                     , path    : '/' + k.slice(0, -3) + 's/' + datum[k]
+                     , path    : '/' + k.slice(0, -3) + ((k.slice(-5, -3)=='ch')?'es/':'s/') + datum[k]
                      , dials   : self._children(datum, 'dials')
                      , outlets : self._children(datum, 'outlets')
                      , props   : datum
